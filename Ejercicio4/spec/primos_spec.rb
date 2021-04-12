@@ -1,6 +1,7 @@
 require './primos.rb'
 
 describe Primos do
+    
     it 'nil = nil' do
         primos= Primos.new()
         expect(primos.extraer(nil)).to eq nil

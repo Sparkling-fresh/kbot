@@ -1,9 +1,10 @@
 class Primos
+
     def extraer(numero)
         if numero == nil
-            return nil 
+            nil
         elsif numero <= 3
-            return [numero] 
+            [numero]
         else
             obtenerPrimos(numero)
         end
@@ -13,14 +14,14 @@ class Primos
         primos = Array.new
         for factor in 2..numero
             if esPrimo(factor)
-                numeroDividido = numero
-                while numeroDividido % factor == 0
-                    numeroDividido = numeroDividido / factor
+                while numero % factor == 0
+                    numero = numero / factor
                     primos.push(factor);
-                end                
+                end
+                break if numero == 1            
             end
         end
-        return primos
+        primos
     end
 
     def esPrimo(numero)
@@ -31,6 +32,7 @@ class Primos
         end
         return true
     end
+
 end
 
 num = ARGV[0]
